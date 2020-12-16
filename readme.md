@@ -2,7 +2,7 @@
 My take on the requirements outlined by Fetch Rewards:
 Your objective is to write a program that takes as inputs two texts and uses a metric to determine how similar they are. Documents that are exactly the same should get a score of 1, and documents that don’t have any words in common should get a score of 0. 
 ### Description
-My solution defaults to using bigrams to get a count for each bigram occurrence in each String. I've set this up to be configurable in the Main. It uses the bigram map for each string to get the cosine similarity.
+My solution defaults to using bigrams to get a count for each bigram occurrence in each String. I've set this up to be configurable in the Main. It uses the bigram map for each String to get the cosine similarity.
 
 ### Usage
 This can be used as either via command line using Main.groovy (under org.elst) or as basic server on localhost:8000 by running StartServer.groovy
@@ -20,6 +20,7 @@ The expected response should be "Score for the 2 inputs provided using 2 word gr
 3. Start server by running the following command: groovy StartServer.groovy
 4. Submit post request to localhost:8000/similarity with json body of:
     1. {"text1": "some string", "text2": "some other string"}
-    2. For now the body assumes they come in as "text1" and "text2"
+    2. For now the body assumes values passed in as "text1" and "text2"
 5. To shutdown server CTRL+C
+
 The expected response should be a 200 Ok and body of "score:" <score for the 2 strings>
